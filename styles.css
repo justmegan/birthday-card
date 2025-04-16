@@ -1,0 +1,245 @@
+body {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    background: var(--custom-bg, #fffaf0);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 40px;
+    color: #4b3832;
+}
+
+h1 {
+    color: #e4655a;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #e4655a;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #606c38;
+    font-size: 1.2em;
+    max-width: 600px;         
+    margin: 0 auto 1.5em;    
+    padding: 0 15px;          
+    text-align: justify;      
+    line-height: 1.6;    
+}
+
+blockquote {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.3em;
+    font-style: italic;
+    background: rgba(255, 240, 245, 0.5); 
+    border-left: 5px solid #6b4226;
+    border-radius: 10px;
+    color: #6b4226;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-out;
+}
+
+.carousel-button {
+    background-color: rgba(255, 102, 102, 0.7); 
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(255, 102, 102, 1);
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px); 
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+
+@keyframes slideSide {
+    0% {
+        transform: translateX(-100px); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#main-content {
+    animation: slideDown 1s ease-out;
+    margin-bottom: 100px;
+}
+
+#countdown-screen h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.7em;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    animation: slideSide 1s ease-out;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.photo-container {
+    width: 80%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.photo-container img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 5px 5px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    max-width: 200px; 
+}
+
+.photo-container img:hover {
+    transform: scale(1.05);
+}
+
+
+.carousel-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel-button:hover {
+    background-color: #d9534f;
+}
+
+#start-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#start-button:hover {
+    background-color: #d9534f;
+    transform: scale(1.05);
+}
+
+#toggle-music {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+#toggle-music:hover {
+    background-color: #d9534f;
+}
+
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#countdown-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3em;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    animation: slideSide 1s ease-out;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .photo-container {
+        flex-wrap: wrap;         
+        justify-content: center;
+    }
+
+    .photo-container img {
+        max-width: 45vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .photo-container img {
+        max-width: 40vw;
+    }
+}
