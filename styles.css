@@ -4,7 +4,7 @@ body {
     background: var(--custom-bg, #fffaf0);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 40px;
+    padding: 40px 20px;
     color: #4b3832;
 }
 
@@ -241,5 +241,15 @@ html, body {
 @media screen and (max-width: 480px) {
     .photo-container img {
         max-width: 40vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    p {
+        font-size: 1.05em;
     }
 }
